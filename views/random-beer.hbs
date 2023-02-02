@@ -1,23 +1,20 @@
 <div>
-  <ul>
-    <li class="random-beer">
       <div>
-        <img src="{{random.image_url}}" alt="beer" style="width: 50px;">
+        <img src="{{image_url}}" alt="beer" style="width: 50px;">
       </div>
+
       <div>
-        <p style="font-size: 30px;"><b>{{random.name}}</b></p>
-        <p class="tagline">{{random.tagline}}</p>
-        <p>{{random.description}}</p>
+        <p style="font-size: 30px;"><b>{{name}}</b></p>
+        <p class="tagline">{{tagline}}</p>
+        <p>{{description}}</p>
         <p>Food Pairing</p>
         <ul class="mb-3">
-          {{#each random.food_pairing as |food|}}
+          {{#each food_pairing as |food|}}
           <li>
             {{food}}
           </li>
           {{/each}}
         </ul>    
-        <p><b>Brewer Tips:</b> {{random.brewers_tips}}</p>
+        <p><b>Brewer Tips:</b> {{brewers_tips}}</p>
       </div>
-    </li>   
-  </ul>
 </div>

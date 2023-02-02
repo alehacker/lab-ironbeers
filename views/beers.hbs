@@ -1,11 +1,11 @@
 <div class="beers">
   <h1>Beers</h1>
-  <div class="beer-list" style="background-color:blue">
-    {{#each beerData}}
-     <img src="{{beerData.image_url}}" alt="beer" style="width: 50px;">
-     <p>{{beerData.name}}</p>
-     <p>{{beerData.description}}</p>
-     <p>{{beerData.tagline}}</p> 
+  <div class="beer-list">
+    {{#each beers}}
+     <img src="{{image_url}}" alt="beer" style="width: 50px;">
+     <p>{{name}}</p>
+     <p>{{description}}</p>
+     <p>{{tagline}}</p> 
     {{/each}}
   </div>
 </div>

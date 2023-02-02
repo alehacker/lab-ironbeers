@@ -11,11 +11,8 @@ router.get('/', function(req, res, next) {
 router.get('/beers', ((req, res, next) =>{
     punkAPI
     .getBeers()
-    .then(beersFromApi => {
-        // console.log('Beers from the database: ', beersFromApi)
-        const beerData = {beersFromApi};
-        // console.log("these are the 25 beers", beerData)
-        res.render("beers.hbs", beerData)
+    .then((beers) => {
+        res.render("beers.hbs", {beers})
     })
     .catch(error => console.log(error));
 }))
@@ -23,9 +20,9 @@ router.get('/beers', ((req, res, next) =>{
 router.get('/random-beer', ((req, res, next)=>{
     punkAPI
     .getRandom()
-    .then(responseFromAPI => {
-    const random = { responseFromAPI };
-    res.render('random-beer', random);
+    .then((randomBeer) => {
+        // console.log(random)
+        res.render('random-beer.hbs', {randomBeer});
     })
     .catch(error => console.log(error));
 
