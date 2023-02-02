@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -20,5 +19,31 @@ a {
     flex-direction: column;
     gap: 15px;
 }
+
+
+.beers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    text-align: center;
+    align-items: center;
+    padding: 5px;
+    border: 5px;
+    gap: 5px;
+  }
+
+/* .single-beer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+} */
+
+.random-beer{
+    padding: 25px 100px 75px 100px;
+    border: 5px;
+}
+
+
 
 

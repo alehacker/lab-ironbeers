@@ -5,7 +5,7 @@ const punkAPI = new PunkAPIWrapper()
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'IronBeers' });
+  res.render('index.hbs');
 });
 
 router.get('/beers', ((req, res, next) =>{
@@ -21,11 +21,20 @@ router.get('/random-beer', ((req, res, next)=>{
     punkAPI
     .getRandom()
     .then((randomBeer) => {
-        // console.log(random)
+        // console.log(randomBeer)
         res.render('random-beer.hbs', {randomBeer});
     })
     .catch(error => console.log(error));
 
+}))
+
+router.get('/beer/:id', ((req, res, next) => {
+    punkAPI
+        .getBeer(req.params.id)
+        .then((result) => {
+            res.render('beer-detail.hbs', {result})
+        })
+        .catch(error => console.log(error));
 }))
 
 module.exports = router;
